@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar secondary>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Meu Perfil</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="user-details">
+    <div *ngIf="user" class="selection">
+        <ion-card>
+            <ion-card-content>
+                <img src="{{user.pic}}"/>
+                <h2>{{user.name}} </h2>
+            </ion-card-content>
+
+            <ion-list>
+
+
+                <ion-item>
+                    <ion-icon name="home" item-left></ion-icon>
+                    <ion-label floating>Endereço</ion-label>
+                    <ion-input type="text" value="{{user.address}}"> </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-icon name="call" item-left></ion-icon>
+                    <ion-label floating>Mobile</ion-label>
+                    <ion-input type="text" value="{{user.phone}}"> </ion-input>
+                </ion-item>
+
+
+
+                <ion-item>
+                    <ion-icon name="mail" item-left></ion-icon>
+
+                    <ion-label floating>Email</ion-label>
+                    <ion-input type="text" value="{{user.email}}"> </ion-input>
+                </ion-item>
+            </ion-list>
+
+        </ion-card>
+        <ion-list>
+
+            <ion-item *ngFor="let card of user.creditCards">
+                <ion-row no-padding>
+                    <ion-col width-20>
+                    <ion-avatar item-left>
+                        <img  *ngIf="card.type === 'visa' " src="./images/card/visa.jpg"/>
+                        <img  *ngIf="card.type === 'master' " src="./images/card/master.jpg"/>
+                    </ion-avatar>
+                    </ion-col>
+                    <ion-col>
+
+                        <h2>{{card.name}}</h2>
+                        <p>{{card.number}}</p>
+                        <p>{{card.expire}}</p>
+                    </ion-col>
+
+                </ion-row>
+            </ion-item>
+        </ion-list>
+
+    </div>
+</ion-content>

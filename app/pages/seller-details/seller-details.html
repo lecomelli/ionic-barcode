@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar secondary>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Mercado</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="seller">
+    <div *ngIf="seller" class="selection">
+        <ion-card>
+            <ion-card-content>
+                <img src="{{seller.pic}}"/>
+                <h2>{{seller.name}} </h2>
+                <h2>{{seller.address}} </h2>
+            </ion-card-content>
+
+            <ion-list>
+                <a href="tel:{{seller.Phone__c}}" ion-item>
+                    <ion-icon name="call" item-left></ion-icon>
+                    <p>Call Office</p>
+                    <h2>{{seller.phone}}</h2>
+                </a>
+                <a href="tel:{{seller.phone}}" ion-item>
+                    <ion-icon name="call" item-left></ion-icon>
+                    <p>Call Mobile</p>
+                    <h2>{{seller.latitude}}</h2>
+                </a>
+                <a href="tel:{{seller.phone}}" ion-item>
+                    <ion-icon name="text" item-left></ion-icon>
+                    <p>Text</p>
+                    <h2>{{seller.latitude}}</h2>
+                </a>
+                <a href="mailto:{{seller.email}}" ion-item>
+                    <ion-icon name="mail" item-left></ion-icon>
+                    <p>Email</p>
+                    <h2>{{seller.email}}</h2>
+                </a>
+            </ion-list>
+
+        </ion-card>
+    </div>
+</ion-content>

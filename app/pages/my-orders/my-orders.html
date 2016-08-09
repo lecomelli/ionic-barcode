@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar secondary>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Meus pedidos</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let order of orders">
+
+            <ion-thumbnail item-left>
+                <img src="{{order.product.thumb}}"/>
+            </ion-thumbnail>
+            <h2>{{order.product.title}}</h2>
+
+            <p><b>Pedido:</b> {{order.id}}  <b>Status:</b>  {{order.status}}</p>
+            <p><b>Quantidade:</b> {{order.quantity}} - <b>Valor:</b>  {{order.seller.price}} </p>
+            <p><b>Total:</b> R$ {{order.total}},00  </p>
+        </ion-item>
+    </ion-list>
+</ion-content>

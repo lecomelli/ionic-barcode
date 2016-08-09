@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-navbar secondary>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Produto</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="product">
+    <div *ngIf="product" class="selection">
+        <ion-card>
+            <img src="{{product.pic}}"/>
+            <ion-card-content>
+                <h2 class="card-title">
+                    {{product.title}}
+                </h2>
+                <p>
+                    {{product.description}}
+                </p>
+                <ion-row no-padding>
+                    <ion-col width-30>
+                        <button clear small (click)="favorite($event, product)">
+                            <ion-icon name="star"></ion-icon>
+                            Favorito
+                        </button>
+                    </ion-col>
+                    <ion-col text-center width-40>
+                        <button clear small (click)="like($event, product)">
+                            <ion-icon name="thumbs-up"></ion-icon>
+                            Like
+                            <ion-badge item-left>{{product.likes}}</ion-badge>
+                        </button>
+                    </ion-col>
+                    <ion-col text-right width-30>
+                        <button clear small (click)="share($event, product)">
+                            <ion-icon name="share-alt"></ion-icon>
+                            Share
+                        </button>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+            <ion-list>
+
+                <ion-item *ngFor="let seller of product.sellers">
+                    <ion-row no-padding>
+                        <ion-col width-20>
+                            <ion-avatar item-left>
+                                <img src="{{seller.thumb}}"/>
+                            </ion-avatar>
+                        </ion-col>
+                        <ion-col width-50>
+                            <h2>{{seller.name}}</h2>
+                            <p>{{seller.price}} taxa: {{seller.fare}} </p>
+                            <p>Entrega em: {{seller.deliver}}</p>
+                        </ion-col>
+                        <ion-col width-30>
+                            <button clear small (click)="buy($event, product, seller)">
+                                <ion-icon name="cart"></ion-icon>
+                                Comprar
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+            </ion-list>
+        </ion-card>
+    </div>
+</ion-content>

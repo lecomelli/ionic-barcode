@@ -1,0 +1,47 @@
+<ion-header secondary>
+    <ion-navbar secondary>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title dark>Refil Now</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="welcome">
+
+
+    <ion-content class="welcome">
+
+        <ion-grid>
+            <ion-row>
+                <ion-col offset-25 width-50>
+                    <img class="img" src="images/dfl_logo.png"/>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col offset-10 width-80>
+                    <button full large  (click)="scan($event, order)">
+                        <ion-icon name="barcode"></ion-icon>
+                        scanner
+                    </button>
+                </ion-col>
+            </ion-row>
+            <ion-row>                
+                <ion-col offset-20 width-50>
+
+                    
+                    <ion-grid >
+                      <ion-row >
+                        <ion-col class="footer">Powered by <img class="img-gs1" src="images/logo_gs1.png"/></ion-col>
+                      </ion-row>
+                    </ion-grid>
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+    </ion-content>
+
+
+</ion-content>
